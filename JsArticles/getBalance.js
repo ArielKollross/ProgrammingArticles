@@ -24,17 +24,19 @@ const transactions = [
 console.log(transactions);
 
 
-function getBaleance(){
+function getBaleance() {
   const income = transactions
-  .filter(transactions => transactions.type === 'income')
-  .reduce((sum, current) => {
-   return sum + current.value
-  }, 0);
+    .filter(transactions => transactions.type === 'income')
+    .reduce((sum, current) => {
+      return sum + current.value
+    }, 0);
 
-const outcome = transactions
-  .filter(transactions => transactions.type === 'outcome').reduce((sum, acc) => {return sum + acc.value}, 0);
+  const outcome = transactions
+    .filter(transactions => transactions.type === 'outcome').reduce((sum, acc) => {
+      return sum + acc.value
+    }, 0);
 
-console.log(outcome);
+  console.log(outcome);
 
   return {
     income,
