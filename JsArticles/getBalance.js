@@ -5,17 +5,17 @@ const transactions = [
     type: "income"
   },
   {
-    title: "Salário",
-    value: 3000,
+    title: "Freela",
+    value: 2000,
     type: "income"
   },
   {
-    title: "Salário",
+    title: "Boleto",
     value: 2000,
     type: "outcome"
   },
   // {
-  //   title: "Salário",
+  //   title: "Conta",
   //   value: 500,
   //   type: "outcome"
   // },
@@ -35,8 +35,6 @@ function getBaleance() {
     .filter(transactions => transactions.type === 'outcome').reduce((sum, acc) => {
       return sum + acc.value
     }, 0);
-
-  console.log(outcome);
 
   return {
     income,
