@@ -142,14 +142,14 @@ npm run serve
 ```
 Se tudo der certo, deve aparecer uma menssagem de sucesso na compilação e então um endereço local, como ` - Local: http://localhost:8080/ `. Entre nele pelo navegador e deve te retornar uma página em branco.
 
-Conforme for necessário, vou comentar sobre os a funcionalidade de cada uma das pastas do Vue. No momento vamos utilizar
+Conforme for necessário, vou comentar sobre as funcionalidade de cada uma das pastas do Vue. No momento vamos utilizar apenas três delas.
 
-Dentro da pasta **src**, temos a pasta de **Views** é nela que vamos deixar as páginas da nossa aplicação e seguindo o parão do Vue, devemos sempre começar o nome do arquivo com letra maiúscula.
+Dentro da pasta **src**, temos a pasta de **Views** é nela que vamos criar as páginas da nossa aplicação e seguindo o parão do Vue, devemos sempre começar o nome do arquivo com letra maiúscula.
 
 A proxima pasta é a de **components**, como o próprio nome sugere, é onde os componentes da nossa aplicação vão ficar. Podemos imaginar os componentes como areas especificas de uma página, ou partes que se repentem na nossa aplicação. É uma boa pratica fazer este tipo de separação, pois deixa o código muito mais manutenível.
 
 Exemplo de componentes é uma barra de navegação, ou um rodapé, que se repete em várias partes do sistema, então, em vez de termos que repetir o código, simplementes importamos o componente.
 
-Por fim temos a pastas de **routes** lá vamos definir todos os caminhos da nossa aplicação. Por mais que estejamos criando uma SPA ( Single Page Aplication), o vue nos possibilita criar as rotas como se fosse um site normal.
+Por fim, temos a pasta de **routes**, lá vamos definir todos os caminhos da nossa aplicação. Por mais que estejamos criando uma SPA ([Single Page Aplication(https://en.wikipedia.org/wiki/Single-page_application)]), o vue nos possibilita criar as rotas como se fosse um site normal.
 
 ### 2.3 Criando a interface
