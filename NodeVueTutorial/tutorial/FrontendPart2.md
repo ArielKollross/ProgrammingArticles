@@ -150,6 +150,6 @@ A proxima pasta é a de **components**, como o próprio nome sugere, é onde os 
 
 Exemplo de componentes é uma barra de navegação, ou um rodapé, que se repete em várias partes do sistema, então, em vez de termos que repetir o código, simplementes importamos o componente.
 
-Por fim, temos a pasta de **routes**, lá vamos definir todos os caminhos da nossa aplicação. Por mais que estejamos criando uma SPA ([Single Page Aplication(https://en.wikipedia.org/wiki/Single-page_application)]), o vue nos possibilita criar as rotas como se fosse um site normal.
+Por fim, temos a pasta de **routes**, lá vamos definir todos os caminhos da nossa aplicação. Por mais que estejamos criando uma SPA ([Single Page Aplication](https://en.wikipedia.org/wiki/Single-page_application)), o vue nos possibilita criar as rotas como se fosse um site normal.
 
 ### 2.3 Criando a interface
