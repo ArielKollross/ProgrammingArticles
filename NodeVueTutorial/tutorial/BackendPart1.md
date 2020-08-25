@@ -420,4 +420,12 @@ routes.delete('/projects/:id', projectsController.delete);
 module.exports = routes;
 ```
 
+Agora devemos testar todas as rotas utilizando o Insomnia. Recomendo fazer uma separação utilizando as pastas que o programa permite criar.
+
+<h1 align="center">
+<img src="NodeVueTuTorial/tutorial/assets/insomnia.png width="250px" />
+</h1>
+
+O exportavel das rotas se encontra [aqui](NodeVueTuTorial/tutorial/Insomnia_2020-08-25.json).
+
 Com isso terminamos a primeira parte do tutorial. Ainda esta faltando várias funções, como por exemplos as validações de dados. Mas já estamos bem equipados para dar inicio ao frontend e conforme precisamos, vamos voltar ao backend para adicionar novas "features".

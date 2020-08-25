@@ -2,7 +2,7 @@
 
 ## Objetivo 
 
-Nesta segunda parte do tutorial vamos criar nosso frontend e conectar ao backend que fizemos na primeira parte.
+Nesta segunda parte do tutorial vamos criar nosso frontend e conectar ao backend que fizemos na [primeira parte](https://github.com/ArielKollross/ProgrammingArticles/blob/master/NodeVueToturial/tutorial/BackendPart1.md).
 
 ## 2 Criando Frontend da aplicação
 
@@ -10,13 +10,13 @@ Nesta segunda parte do tutorial vamos criar nosso frontend e conectar ao backend
 
 Antes de mais nada é necessário já ter o npm ou yarn instalado na sua máquina. Também recomendo instalar o [NVM](https://github.com/nvm-sh/nvm) que é um gerenciador de versões do NodeJs. 
 
-Para instalar, rodamos no terminal,
+Para instalar o vue, rodamos no terminal,
 ```sh
 npm install -g @vue/cli
 # OR
 yarn global add @vue/cli
 ```
-Para verificar se o vue foi instalado corretamente, rode no termial.
+Para verificar se o Vue foi instalado corretamente, rode no termial.
 ```sh
 vue --version
 ```
@@ -24,7 +24,7 @@ Para criar o projeto, rodamos,
 ```sh
 vue create web
 ```
-O vue irá perguntar quer fazer uma instalação "default" ou "Manually", escolhemos a ultima opção, em seguida,
+O Vue irá perguntar se quer fazer uma instalação "default" ou "Manually", escolhemos a ultima opção, em seguida,
 ```sh
 ?Check the features needed for your project:
 # vou selecionar,
@@ -64,5 +64,9 @@ WARN  There are uncommited changes in the current repository, it s recommended t
 Com isso já estamos prontos para conhecer o vue.
 
 ### Estrutura básica do Vue.
+
+<h1 align="center">
+<img src="NodeVueTuTorial/tutorial/assets/vue.png width="250px" />
+</h1>
 
 
