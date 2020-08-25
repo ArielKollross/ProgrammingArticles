@@ -66,7 +66,7 @@ Com isso já estamos prontos para conhecer o vue.
 ### Estrutura básica do Vue.
 
 <h1 align="center">
-<img src="NodeVueTuTorial/tutorial/assets/vue.png width="250px" />
+<img src="NodeVueTutorial/tutorial/assets/vue.png width="250px" />
 </h1>
 
 
