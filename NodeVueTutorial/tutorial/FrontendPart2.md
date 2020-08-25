@@ -69,4 +69,75 @@ Com isso já estamos prontos para conhecer o vue.
 <img src="https://github.com/ArielKollross/ProgrammingArticles/blob/master/NodeVueTutorial/tutorial/assets/vue.png width="250px" />
 </h1>
 
+Primeiramente, vou excluir alguns arquivos.
 
+1. Na pastas components, excluir o HelloWorld.vue;
+
+2. Na pastas assets, excluir todo conteúdo dentro dela;
+
+3. Na pasta views, excluir o About.vue
+
+Agora vou fazer algumas modificações dentro dos arquivos, para remover as importações dos arquivos excluidos.
+
+
+1. No arquivo App.vue vou limpar todo conteúdo deixando apenas;
+```html
+<template>
+  <v-app>
+    <v-main>
+
+    </v-main>
+  </v-app>
+</template>
+
+<script>
+export default {
+
+};
+</script>
+
+```
+
+2. No arquivo views/Home.vue,
+```html
+<template>
+  <div class="home">
+    <h1>Home</h1>
+  </div>
+</template>
+
+<script>
+export default {
+}
+</script>
+```
+
+3. No arquivo routes/index.js 
+```html
+import Vue from 'vue'
+import VueRouter from 'vue-router'
+
+Vue.use(VueRouter)
+
+  const routes = [
+  {
+    path: '/',
+    name: 'Home',
+    component: ()  => import('@/views/Home'),
+  },
+]
+
+const router = new VueRouter({
+  mode: 'history',
+  base: process.env.BASE_URL,
+  routes
+})
+
+export default router
+```
+
+Feito isso o servidor deve esta pronto para rodar, então dentro da pasta do projeto vue, rode no terminal,
+```sh
+npm run serve
+```
+Se tudo der certo, deve aparecer uma menssagem de sucesso na compilação e então um endereço local, como ` - Local: http://localhost:8080/ `. Entre nele pelo navegador e deve te retornar uma página em branco.
