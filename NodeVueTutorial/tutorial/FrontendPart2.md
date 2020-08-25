@@ -2,7 +2,7 @@
 
 ## Objetivo 
 
-Nesta segunda parte do tutorial vamos criar nosso frontend e conectar ao backend que fizemos na [primeira parte](https://github.com/ArielKollross/ProgrammingArticles/blob/master/NodeVueToturial/tutorial/BackendPart1.md).
+Nesta segunda parte do tutorial, vamos criar nosso frontend e conectar ao backend que fizemos na [primeira parte](https://github.com/ArielKollross/ProgrammingArticles/blob/master/NodeVueTutorial/tutorial/BackendPart1.md).
 
 ## 2 Criando Frontend da aplicação
 
@@ -63,7 +63,7 @@ WARN  There are uncommited changes in the current repository, it s recommended t
 ```
 Com isso já estamos prontos para conhecer o vue.
 
-### Estrutura básica do Vue.
+### 2.2 Estrutura básica do Vue.
 
 <h1 align="center">
 <img src="https://github.com/ArielKollross/ProgrammingArticles/blob/master/NodeVueTutorial/tutorial/assets/vue.png width="250px" />
@@ -113,7 +113,7 @@ export default {
 ```
 
 3. No arquivo routes/index.js 
-```html
+```js
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 
@@ -141,3 +141,15 @@ Feito isso o servidor deve esta pronto para rodar, então dentro da pasta do pro
 npm run serve
 ```
 Se tudo der certo, deve aparecer uma menssagem de sucesso na compilação e então um endereço local, como ` - Local: http://localhost:8080/ `. Entre nele pelo navegador e deve te retornar uma página em branco.
+
+Conforme for necessário, vou comentar sobre os a funcionalidade de cada uma das pastas do Vue. No momento vamos utilizar
+
+Dentro da pasta **src**, temos a pasta de **Views** é nela que vamos deixar as páginas da nossa aplicação e seguindo o parão do Vue, devemos sempre começar o nome do arquivo com letra maiúscula.
+
+A proxima pasta é a de **components**, como o próprio nome sugere, é onde os componentes da nossa aplicação vão ficar. Podemos imaginar os componentes como areas especificas de uma página, ou partes que se repentem na nossa aplicação. É uma boa pratica fazer este tipo de separação, pois deixa o código muito mais manutenível.
+
+Exemplo de componentes é uma barra de navegação, ou um rodapé, que se repete em várias partes do sistema, então, em vez de termos que repetir o código, simplementes importamos o componente.
+
+Por fim temos a pastas de **routes** lá vamos definir todos os caminhos da nossa aplicação. Por mais que estejamos criando uma SPA ( Single Page Aplication), o vue nos possibilita criar as rotas como se fosse um site normal.
+
+### 2.3 Criando a interface

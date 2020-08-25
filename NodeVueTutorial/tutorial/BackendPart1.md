@@ -426,6 +426,6 @@ Agora devemos testar todas as rotas utilizando o Insomnia. Recomendo fazer uma s
 <img src="https://github.com/ArielKollross/ProgrammingArticles/blob/master/NodeVueTutorial/tutorial/assets/insomnia.png width="250px" />
 </h1>
 
-O exportavel das rotas se encontra [aqui](https://github.com/ArielKollross/ProgrammingArticles/blob/master/NodeVueTutorial/tutorial/Insomnia_2020-08-25.json).
+O exportável das rotas do Insomnia se encontra [aqui](https://github.com/ArielKollross/ProgrammingArticles/blob/master/NodeVueTutorial/tutorial/Insomnia_2020-08-25.json).
 
 Com isso terminamos a primeira parte do tutorial. Ainda esta faltando várias funções, como por exemplos as validações de dados. Mas já estamos bem equipados para dar inicio ao frontend e conforme precisamos, vamos voltar ao backend para adicionar novas "features".
