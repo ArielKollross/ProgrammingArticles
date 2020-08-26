@@ -122,7 +122,6 @@ Vue.use(VueRouter)
   const routes = [
   {
     path: '/',
-    name: 'Home',
     component: ()  => import('@/views/Home'),
   },
 ]
@@ -152,4 +151,124 @@ Exemplo de componentes é uma barra de navegação, ou um rodapé, que se repete
 
 Por fim, temos a pasta de **routes**, lá vamos definir todos os caminhos da nossa aplicação. Por mais que estejamos criando uma SPA ([Single Page Aplication](https://en.wikipedia.org/wiki/Single-page_application)), o vue nos possibilita criar as rotas como se fosse um site normal.
 
-### 2.3 Criando a interface
+### 2.3 Criando as rotas e interface.
+
+Primeiro, vamos configurar a rota da pagina home, com o Vue Router. Quando criamos o nosso projeto, já solicitamos ao vue que adiciona-se o roter. O Rauter tem duas principais tags, o  `<router-views>` e o `<router-link>`. A primeira nos permite a navegação e renderização de páginas, enquanto a segundo tem para links, função parecida com a tag `<a>` to HTML.
+
+No arquivo App.vue, vamos adicionar a tag de views,
+```html
+<!-- src/App.vue -->
+<template>
+  <v-app>
+    <v-main>
+      <router-view></router-view>
+    </v-main>
+  </v-app>
+</template>
+
+...
+```
+e assim que salvar, no navegador deve aparecer o titulo "Home".
+
+Insto ocorreu porque arquivo routes/index.js, já tinhamos deixado configurado a rota
+```js
+  const routes = [
+  {
+    path: '/',
+    component: ()  => import('@/views/Home'),
+  },
+]
+```
+Nas vue router, passamos um array de objetos para cada uma das rotas, o principal é o caminho (**path**), ou seja, nossa "url" e o **component**,que é a pagina/view que rendenriza a rota.
+
+Agora vamos dar inicio a construção da interface com Vuetify, vou utilizar bastante da (documentação)[https://vuetifyjs.com/en/], que é muito boa e detalhada.
+
+Antes de começar, vou recomendar duas extensões para trabalhar com Vue e Veutify, que são **Vuetur** e **Vuetify-vscode**.
+
+Agora vou mudar o nome do arquivo **Home.vue** e o "import" do copoment na **routes/index.js**, para **UserRegister.vue** e vamos criar um formulário de registro.
+```html
+<!-- src/views/UserRegister.vue -->
+<template>
+  <v-container>
+    <v-card>
+      <v-card-title>User register</v-card-title>
+
+      <v-form 
+      @submit.prevent="handleRegisterNewUser" 
+      id="user-register"
+      >
+        <v-row class="justify-center">
+          <v-col cols="12" md="4">
+            <v-text-field
+              required 
+              solo 
+              flat 
+              background-color="#efefef"
+              type="input" 
+              v-model="user.email"
+              label="email"
+            ></v-text-field>
+
+            <v-text-field
+              required
+              solo
+              flat
+              background-color="#efefef"
+              type="password" 
+              v-model="user.password"
+              label="password"
+            ></v-text-field>
+
+              <v-btn color="success"
+                type="submit"
+                class="mb-12"
+                block
+              >register</v-btn>
+          </v-col>
+        </v-row>
+      </v-form>
+    </v-card>
+  </v-container>
+</template>
+
+<script>
+import api from '@/services/api.service.js';
+
+export default {
+  data() {
+    return {
+      user: {
+        email: null,
+        password: null,
+      }
+    }
+  },
+  methods: {
+    async handleRegisterNewUser() {
+    console.log(`email: ${this.user.email}, password: ${this.user.password}`)
+  }
+};
+</script>
+```
+
+### 2.4 Requisição para api
+
+Agora que já temos nosso primeiro formulário criado, vamos fazer a comunicação com o backend.
+
+Primeiramente vamos instalar o axios.
+```sh
+npm i axios
+```
+Depois vamos criar uma nova pasta chamada **services** e entro dela uma arquivo, chamado **api.service.js**. 
+
+```js
+import axios from 'axios';
+
+const api =  axios.create({
+  baseURL: 'http://localhost:3333',
+});
+
+export default api;
+```
+
+#### 2.5 Validação do formulário

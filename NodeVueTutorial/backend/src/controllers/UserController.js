@@ -2,7 +2,7 @@ const knex = require('../database');
 
 module.exports = {
 
-  async index(request, response) {
+  async index(request, response, next) {
     try {
       const results = await knex.raw(`SELECT * FROM users`);
 
