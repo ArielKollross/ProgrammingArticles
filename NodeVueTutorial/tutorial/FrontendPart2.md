@@ -181,7 +181,7 @@ Insto ocorreu porque arquivo routes/index.js, já tinhamos deixado configurado a
 ```
 Nas vue router, passamos um array de objetos para cada uma das rotas, o principal é o caminho (**path**), ou seja, nossa "url" e o **component**,que é a pagina/view que rendenriza a rota.
 
-Agora vamos dar inicio a construção da interface com Vuetify, vou utilizar bastante da (documentação)[https://vuetifyjs.com/en/], que é muito boa e detalhada.
+Agora vamos dar inicio a construção da interface com Vuetify, vou utilizar bastante da [documentação](https://vuetifyjs.com/en/), que é muito boa e detalhada.
 
 Antes de começar, vou recomendar duas extensões para trabalhar com Vue e Veutify, que são **Vuetur** e **Vuetify-vscode**.
 
@@ -232,8 +232,6 @@ Agora vou mudar o nome do arquivo **Home.vue** e o "import" do copoment na **rou
 </template>
 
 <script>
-import api from '@/services/api.service.js';
-
 export default {
   data() {
     return {
@@ -251,6 +249,12 @@ export default {
 </script>
 ```
 
+Algumas coisas são importantes de mencionar sobre o código acima.
+
+A primeira, é que quando chamo o **v-form**, estou passando o seguinte comando `@submit.prevent="handleRegisterNewUser"`, aqui o vue esta esperando um evento de submit, que é acionado quando clicamos no botão. Este botão, tem que ter obrigatóriamente o propriedade `type="submit"`. O **prevente** faz com que o formulário ignore o comportamento padrão de envio e então chame o método **handleRegisterNewUser**, que no momento envia apenas uma console.log da senha e email preenchidos pelo usuário.
+
+Outro ponto inportante é a ligação entre os campos do formulário com a função **data()**. Primeiramente, defini que o usuario é um objeto com duas propriedades, **email** e **password**, estas duas propriedades tem valores inciais nulos. Para fazer a ligação entre os campos e as propriedades, utilizamos a a diretiva **v-model**.
+
 ### 2.4 Requisição para api
 
 Agora que já temos nosso primeiro formulário criado, vamos fazer a comunicação com o backend.
@@ -259,7 +263,7 @@ Primeiramente vamos instalar o axios.
 ```sh
 npm i axios
 ```
-Depois vamos criar uma nova pasta chamada **services** e entro dela uma arquivo, chamado **api.service.js**. 
+Depois vamos criar uma nova pasta chamada **services** e entro dela uma arquivo, chamado **api.service.js**.
 
 ```js
 import axios from 'axios';
@@ -271,4 +275,30 @@ const api =  axios.create({
 export default api;
 ```
 
-#### 2.5 Validação do formulário
+Agora onde temos nosso methods, no arquivo **UserRegister.vue**, vamos tirar o conso log e fazer a chamada a nossa api.
+
+```js
+import api from '@/services/api.service.js';
+
+export default {
+  // .....
+  methods: {
+    async handleRegisterNewUser() {
+      try {
+        await api.post('/users', {
+          email: this.user.email,
+          password: this.user.password,
+      });
+
+      window.alert('logado');
+      } catch (error) {
+        console.log(error);
+      }
+    }
+  }
+};
+```
+
+Com o servidor rodando, tente fazer o cadastro e verificar se o registro foi criado no banco de dados. Se tudo ocorrer bem, nosso front já esta faznedo se comunicando corretamente com a API.
+
+### 2.5 Validação do formulário
