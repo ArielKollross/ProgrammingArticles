@@ -302,3 +302,38 @@ export default {
 Com o servidor rodando, tente fazer o cadastro e verificar se o registro foi criado no banco de dados. Se tudo ocorrer bem, nosso front já esta faznedo se comunicando corretamente com a API.
 
 ### 2.5 Validação do formulário
+
+Agora vamos instalar o pacote do [vuelidate](https://vuelidate.js.org/) e utilizar para fazer a validação no formulário.
+
+```sh
+npm i veulidate
+```
+
+Agora na pasta de **plugins**, vamos importar o **vuelidate**.
+```js
+// src/plugins
+import Vue from 'vue';
+import Vuelidate from 'vuelidate';
+
+Vue.use(Vuelidate);
+```
+Então precisamos fazer a importação no arquivo principal da nossa aplicação, o **main.js**,
+```js
+import Vue from 'vue'
+
+import App from './App.vue'
+import router from './router'
+import store from './store'
+import vuetify from './plugins/vuetify';
+import '@/plugins/vuelidate';
+
+Vue.config.productionTip = false
+
+new Vue({
+  router,
+  store,
+  vuetify,
+  render: h => h(App)
+}).$mount('#app')
+
+```
