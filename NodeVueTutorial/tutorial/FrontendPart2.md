@@ -337,3 +337,29 @@ new Vue({
 }).$mount('#app')
 
 ```
+
+Agora vamos trabalhar no nosso arquivo de **UserRegister.vue**,
+```js
+<script>
+export default {
+  data() {
+    ...
+ }
+  },
+  validations: {
+     user: {
+      email: {
+        email,
+        required,
+      },
+      password: {
+        minLength: minLength(6),
+        required,
+      }
+    }
+  },
+  methods: {
+   ...
+};
+</script>
+```
