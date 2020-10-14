@@ -423,7 +423,7 @@ module.exports = routes;
 Agora devemos testar todas as rotas utilizando o Insomnia. Recomendo fazer uma separação utilizando as pastas que o programa permite criar.
 
 <h1 align="center">
-<img src="https://github.com/ArielKollross/ProgrammingArticles/blob/master/NodeVueTutorial/tutorial/assets/insomnia.png width="250px" />
+<img src="NodeVueTutorial/tutorial/assets/insomnia.png" width="250px" />
 </h1>
 
 O exportável das rotas do Insomnia se encontra [aqui](https://github.com/ArielKollross/ProgrammingArticles/blob/master/NodeVueTutorial/tutorial/Insomnia_2020-08-25.json).
