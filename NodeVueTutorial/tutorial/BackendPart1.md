@@ -205,10 +205,10 @@ sudo systemctl enable docker
 ```
 Agora basta criar o container do postgres, com
 ```bash
-sudo docker run --name tutorial_CP -e POSTGRES_PASSWORD=docker -p 5434:5432 -d postgres
+sudo docker run --name tutorial_node -e POSTGRES_PASSWORD=docker -p 5434:5432 -d postgres
 ```
 Neste comando estou:
-    1. Cirando o nome do bando de dados docker como "tutorial_CP".
+    1. Cirando o nome do bando de dados docker como "tutorial_node".
     2. Definindo a senha "docker".
     3. Rodando o docker na porta 5434 e dentro da container o Postgres esta rodando na porta padrão 3432.
 
@@ -234,7 +234,7 @@ module.exports = {
     connection: {
       host: "localhost",
       port: 5434,
-      database: "tutorial_cp",
+      database: "tutorial_node",
       user: "postgres",
       password: "docker",
     },
@@ -247,7 +247,7 @@ module.exports = {
 };
 ```
 
-Agora devemos acessar o nosso banco de dados e criar a tabela de nome "tutorial_cp" que vamos utilizar para gravar os dados. No meu caso estou usando o [Postbrid](https://www.electronjs.org/apps/postbird), mas pode ser usado qualquer outro tipo interface de banco, ou o terminal.
+Agora devemos acessar o nosso banco de dados e criar a tabela de nome "tutorial_node" que vamos utilizar para gravar os dados. No meu caso estou usando o [Postbrid](https://www.electronjs.org/apps/postbird), mas pode ser usado qualquer outro tipo interface de banco, ou o terminal.
 
 Agora na pasta "src", criamos uma nova pasta chamada **database** e dentro dela, uma outra pasta chamada **migrations**. Aqui vamos utilizar o knex para criar nossas tabelas, sem precisar fazer isto no braço. Além disso, o Knex nos ajudará a manter um controle de versão do nosso banco de dados.
 
